@@ -2,7 +2,8 @@
 
 class TeamsController < ApplicationController
   def index
-    @teams = Team.order(:name)
+    # @teams = Team.order(:name)
+    @teams = Team.paginate(page: params[:page])
   end
 
   def show

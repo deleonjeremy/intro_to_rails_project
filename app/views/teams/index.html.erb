@@ -1,5 +1,8 @@
-
+<div class="container">
 <% @teams.each do |team| %>
   <h2><%= team.name %></h2>
   <p><%= link_to 'Roster Starting Five', team %></p>
 <% end %>
+</div>
+
+<%= will_paginate(@teams)%>
