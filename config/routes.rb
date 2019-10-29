@@ -8,5 +8,7 @@ Rails.application.routes.draw do
 
   resources :players, only: :show
 
+  get '/pages/:page' => 'pages#show'
+
   root to: 'teams#index'
 end
