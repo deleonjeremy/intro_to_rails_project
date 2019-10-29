@@ -3,7 +3,7 @@
   <% @team.players.each do |player| %>
     <ul>
       <li>
-        <%= player.name %>
+        <%= link_to player.name, player %>
       </li>
     </ul>
   <% end %>
