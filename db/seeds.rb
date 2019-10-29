@@ -1,7 +1,23 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+Player.destroy_all
+Team.destroy_all
+
+25.times do
+  team = Team.create(
+    name: Faker::Sports::Basketball.unique.team
+  )
+  1.times do
+    team.players
+        .build(name: Faker::Sports::Basketball.unique.player)
+        .save
+  end
+  11.times do
+    team.players
+        .build(name: Faker::Name.name)
+        .save
+  end
+end
+
+puts "Generated #{Team.count} teams"
+puts "Generated #{Player.count} players"
