@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class TeamsController < ApplicationController
   def index
+    @teams = Team.all
   end
 
-  def show
-  end
+  def show; end
 end
