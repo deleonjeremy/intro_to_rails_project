@@ -1,7 +1,11 @@
   <h2><%= @team.name %></h2>
   <p>Roster Starting Five:</p>
   <% @team.players.each do |player| %>
-    <li>
-      <%= player.name %>
-    </li>
+    <ul>
+      <li>
+        <%= player.name %>
+      </li>
+    </ul>
   <% end %>
+
+  <p><%= link_to 'Home', root_path %></p>
